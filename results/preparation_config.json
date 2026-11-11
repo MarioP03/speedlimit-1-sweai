@@ -1,0 +1,30 @@
+{
+  "temperature_ids": [
+    15,
+    18
+  ],
+  "max_carry_hours": 2,
+  "assume_complete_event_log": true,
+  "base_speed": 80,
+  "speed_levels": [
+    40,
+    50,
+    60,
+    70,
+    80
+  ],
+  "combination": "minimum",
+  "unavailable_behavior": "incomplete",
+  "model_target": "next_hour_near_accident_count",
+  "seed": 42,
+  "location_name": "Vienna (demo location)",
+  "latitude": 48.21,
+  "longitude": 16.37,
+  "forecast_hours": 3,
+  "api_cache_seconds": 900,
+  "api_timeout_seconds": 10,
+  "ollama_timeout_seconds": 90,
+  "ollama_model": "qwen2.5:1.5b",
+  "tick_seconds": 60,
+  "air_policy": "speedlimit/policies/air_v1.json"
+}

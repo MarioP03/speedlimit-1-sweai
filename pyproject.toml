@@ -1,0 +1,9 @@
+[project]
+name = "speedlimit-student"
+version = "0.1.0"
+description = "Local observational SpeedLimit classroom prototype"
+requires-python = ">=3.11,<3.14"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,107 @@
+{
+  "verified_utc": "2026-11-11T17:09:21.573750+00:00",
+  "offline_tests": {
+    "tests": 64,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_checks_unchanged": {
+    "sensors": true,
+    "types": true,
+    "N_readings": true,
+    "N_events": true,
+    "NPlus1_readings": true,
+    "NPlus1_events": true
+  },
+  "weather_model_sha256": "3faaf52eccd7f773c6fef38f847ba4ab60e0c95c39fe4b9e1fd177eedb24921f",
+  "separate_stage_float_round_trip": "verified identical features and reproduced build metrics",
+  "dependency_check": "pip check: No broken requirements found",
+  "offline_real_model_demo": [
+    {
+      "case": "baseline",
+      "limit": 80,
+      "status": "complete",
+      "model_response": "inferred"
+    },
+    {
+      "case": "weather_only",
+      "limit": 40,
+      "status": "complete",
+      "model_response": "cached_validated"
+    },
+    {
+      "case": "air_only",
+      "limit": 50,
+      "status": "complete",
+      "model_response": "inferred"
+    },
+    {
+      "case": "both",
+      "limit": 40,
+      "status": "complete",
+      "model_response": "cached_validated"
+    }
+  ],
+  "live_real_model_demo": {
+    "time": "2026-11-11T17:07:28.551970+00:00",
+    "status": "complete",
+    "limit": 80,
+    "readings": {
+      "unit": "European AQI (dimensionless)",
+      "current": {
+        "time": "2026-11-11T17:00:00+00:00",
+        "aqi": 44.0
+      },
+      "forecast": [
+        {
+          "time": "2026-11-11T18:00:00+00:00",
+          "aqi": 46.0
+        },
+        {
+          "time": "2026-11-11T19:00:00+00:00",
+          "aqi": 46.0
+        },
+        {
+          "time": "2026-11-11T20:00:00+00:00",
+          "aqi": 46.0
+        }
+      ],
+      "effective_decision_time": "2026-11-11T17:07:28.551970+00:00",
+      "source": "live Open-Meteo / CAMS ENSEMBLE",
+      "api_cache_hit": false,
+      "location": "Vienna (demo location)",
+      "latitude": 48.21,
+      "longitude": 16.37
+    },
+    "model_response": "inferred"
+  },
+  "local_model_smoke": {
+    "real_inference": true,
+    "all_passed": true,
+    "cases": [
+      "clear",
+      "boundary_60",
+      "boundary_80",
+      "boundary_100",
+      "clean_now_high_forecast"
+    ]
+  },
+  "browser_observed": {
+    "baseline_kmh": 80,
+    "weather_kmh": 40,
+    "air_kmh": 50,
+    "combined_kmh": 40,
+    "warnings": [
+      "target unmet",
+      "no training support at selected speed"
+    ]
+  },
+  "year_NPlus1_verdict": "insufficient evidence",
+  "remaining_verification": [
+    "long unattended operation and browser sleep/resume",
+    "other live locations",
+    "course confirmation of temperature IDs, event-hour encoding, event-log coverage"
+  ],
+  "scope": "Student observational prototype; no real-world safety validation; automated network tests use doubles, smoke/demo traces use real local inference"
+}

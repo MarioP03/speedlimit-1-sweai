@@ -1,0 +1,217 @@
+{
+  "checked_utc": "2026-11-11T17:08:08.199354+00:00",
+  "real_inference": true,
+  "all_passed": true,
+  "checks": [
+    {
+      "case": "clear",
+      "expected_reduction_kmh": 0,
+      "passed": true,
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 20.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 20.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 20.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 20.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00"
+      },
+      "result": {
+        "status": "valid",
+        "limit": 80,
+        "reason": "Peak current European AQI 20 at 2026-11-11T12:00:00+00:00 requires 0 km/h reduction.",
+        "controlling_aqi": 20.0,
+        "controlling_time": "2026-11-11T12:00:00+00:00",
+        "reduction_kmh": 0,
+        "model_reason": "The maximum AQI of 20.0 is within the Band A range of 0 through 60, so the reduction is 0 km/h.",
+        "ollama_status": "inferred",
+        "model": "qwen2.5:1.5b",
+        "policy_version": "classroom-eaqi-v1",
+        "prompt_version": "air_v6",
+        "request_hash": "657c6d481660df8bfeaaa63d3b12aa1078c55ed406b2fac0c6b298407f210b91",
+        "raw_response": "{\n  \"reason\": \"The maximum AQI of 20.0 is within the Band A range of 0 through 60, so the reduction is 0 km/h.\",\n  \"controlling_aqi\": 20.0,\n  \"controlling_time\": \"2026-11-11T12:00:00+00:00\",\n  \"reduction_kmh\": 0\n}"
+      }
+    },
+    {
+      "case": "boundary_60",
+      "expected_reduction_kmh": 0,
+      "passed": true,
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 60.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 30.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 40.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 20.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00"
+      },
+      "result": {
+        "status": "valid",
+        "limit": 80,
+        "reason": "Peak current European AQI 60 at 2026-11-11T12:00:00+00:00 requires 0 km/h reduction.",
+        "controlling_aqi": 60.0,
+        "controlling_time": "2026-11-11T12:00:00+00:00",
+        "reduction_kmh": 0,
+        "model_reason": "The maximum AQI value is 60.0, which falls within the Band A range (0 through 60). According to the classroom policy, Band A requires a reduction of 0 km/h. Therefore, the reduction_kmh is 0.",
+        "ollama_status": "inferred",
+        "model": "qwen2.5:1.5b",
+        "policy_version": "classroom-eaqi-v1",
+        "prompt_version": "air_v6",
+        "request_hash": "ce9a913f826aadbe86a6fd4a4dbaf094b12e668054c986a6e16f5dddd85f5889",
+        "raw_response": "{\n  \"reason\": \"The maximum AQI value is 60.0, which falls within the Band A range (0 through 60). According to the classroom policy, Band A requires a reduction of 0 km/h. Therefore, the reduction_kmh is 0.\",\n  \"controlling_aqi\": 60.0,\n  \"controlling_time\": \"2026-11-11T12:00:00+00:00\",\n  \"reduction_kmh\": 0\n}"
+      }
+    },
+    {
+      "case": "boundary_80",
+      "expected_reduction_kmh": 10,
+      "passed": true,
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 80.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 40.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 20.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00"
+      },
+      "result": {
+        "status": "valid",
+        "limit": 70,
+        "reason": "Peak forecast European AQI 80 at 2026-11-11T13:00:00+00:00 requires 10 km/h reduction.",
+        "controlling_aqi": 80.0,
+        "controlling_time": "2026-11-11T13:00:00+00:00",
+        "reduction_kmh": 10,
+        "model_reason": "The maximum AQI of 80.0 is within the Band B range of 60-80, triggering the reduction policy.",
+        "ollama_status": "inferred",
+        "model": "qwen2.5:1.5b",
+        "policy_version": "classroom-eaqi-v1",
+        "prompt_version": "air_v6",
+        "request_hash": "95b375937cc5ba658d834280a77579e350da9c49a9c7d6d26b03d89eca0cb936",
+        "raw_response": "{\n  \"reason\": \"The maximum AQI of 80.0 is within the Band B range of 60-80, triggering the reduction policy.\",\n  \"controlling_aqi\": 80.0,\n  \"controlling_time\": \"2026-11-11T13:00:00+00:00\",\n  \"reduction_kmh\": 10\n}"
+      }
+    },
+    {
+      "case": "boundary_100",
+      "expected_reduction_kmh": 20,
+      "passed": true,
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 40.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 100.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 20.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00"
+      },
+      "result": {
+        "status": "valid",
+        "limit": 60,
+        "reason": "Peak forecast European AQI 100 at 2026-11-11T14:00:00+00:00 requires 20 km/h reduction.",
+        "controlling_aqi": 100.0,
+        "controlling_time": "2026-11-11T14:00:00+00:00",
+        "reduction_kmh": 20,
+        "model_reason": "The maximum AQI of 100.0 was recorded at 2026-11-11T14:00:00+00:00, which is the peak period of the forecast. This AQI falls within the Band C criteria (peak above 80 through 100) as per the classroom policy. Therefore, the reduction in speed is determined by the reduction_kmh rule, which is 20 km/h.",
+        "ollama_status": "inferred",
+        "model": "qwen2.5:1.5b",
+        "policy_version": "classroom-eaqi-v1",
+        "prompt_version": "air_v6",
+        "request_hash": "a4e15c08688a2bc915055cef08fa685066f02494a62de741ba480b567ef4b676",
+        "raw_response": "{\n  \"reason\": \"The maximum AQI of 100.0 was recorded at 2026-11-11T14:00:00+00:00, which is the peak period of the forecast. This AQI falls within the Band C criteria (peak above 80 through 100) as per the classroom policy. Therefore, the reduction in speed is determined by the reduction_kmh rule, which is 20 km/h.\",\n  \"controlling_aqi\": 100.0,\n  \"controlling_time\": \"2026-11-11T14:00:00+00:00\",\n  \"reduction_kmh\": 20\n}"
+      }
+    },
+    {
+      "case": "clean_now_high_forecast",
+      "expected_reduction_kmh": 30,
+      "passed": true,
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 65.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 90.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 110.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00"
+      },
+      "result": {
+        "status": "valid",
+        "limit": 50,
+        "reason": "Peak forecast European AQI 110 at 2026-11-11T15:00:00+00:00 requires 30 km/h reduction.",
+        "controlling_aqi": 110.0,
+        "controlling_time": "2026-11-11T15:00:00+00:00",
+        "reduction_kmh": 30,
+        "model_reason": "The maximum AQI of 110.0 is in the forecast period, which is the most recent data available. The policy states that if the AQI is above 100, the reduction in speed should be 30 km/h. Therefore, the reduction_kmh is 30.",
+        "ollama_status": "inferred",
+        "model": "qwen2.5:1.5b",
+        "policy_version": "classroom-eaqi-v1",
+        "prompt_version": "air_v6",
+        "request_hash": "b8e636abaa1a3864d32be85ccec0f12cb0d14e92a0e6cabfad6dc7a464d036a7",
+        "raw_response": "{\n  \"reason\": \"The maximum AQI of 110.0 is in the forecast period, which is the most recent data available. The policy states that if the AQI is above 100, the reduction in speed should be 30 km/h. Therefore, the reduction_kmh is 30.\",\n  \"controlling_aqi\": 110.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reduction_kmh\": 30\n}"
+      }
+    }
+  ]
+}

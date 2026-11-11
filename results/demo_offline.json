@@ -1,0 +1,256 @@
+[
+  {
+    "case": "baseline",
+    "snapshot_time": "2026-11-11T17:06:27.454365+00:00",
+    "sensors": {
+      "light_millilux": 1000,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "complete",
+    "limit": 80,
+    "weather": {
+      "status": "valid",
+      "limit": 80,
+      "triggered": false,
+      "model_called": false,
+      "reason": "Weather router clear",
+      "predicted_count": null,
+      "target_unmet": false
+    },
+    "air": {
+      "status": "valid",
+      "limit": 80,
+      "reason": "Peak forecast European AQI 45 at 2026-11-11T15:00:00+00:00 requires 0 km/h reduction.",
+      "controlling_aqi": 45.0,
+      "controlling_time": "2026-11-11T15:00:00+00:00",
+      "reduction_kmh": 0,
+      "model_reason": "The maximum AQI of 45.0 is within the Band A range of 0 through 60, so the reduction should be 0.",
+      "ollama_status": "inferred",
+      "model": "qwen2.5:1.5b",
+      "policy_version": "classroom-eaqi-v1",
+      "prompt_version": "air_v6",
+      "request_hash": "14243abc841446cbd4f4f2021adcf601bd10985b052498093c8911df4c7c0850",
+      "raw_response": "{\n  \"reason\": \"The maximum AQI of 45.0 is within the Band A range of 0 through 60, so the reduction should be 0.\",\n  \"controlling_aqi\": 45.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reduction_kmh\": 0\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 35.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 40.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 45.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: all clear (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  },
+  {
+    "case": "weather_only",
+    "snapshot_time": "2026-11-11T17:06:31.433073+00:00",
+    "sensors": {
+      "light_millilux": 499,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "complete",
+    "limit": 40,
+    "weather": {
+      "status": "valid",
+      "limit": 40,
+      "triggered": true,
+      "model_called": true,
+      "predicted_count": 2.3322816274589853,
+      "target_unmet": true,
+      "candidate_estimates": {
+        "70": 2.431311681985164,
+        "60": 2.2241442045562567,
+        "50": 1.8304324975434128,
+        "40": 2.3322816274589853
+      },
+      "training_hours_at_selected_speed": 0,
+      "reason": "Target unmet; lowest candidate; observational estimate, not a safety guarantee"
+    },
+    "air": {
+      "status": "valid",
+      "limit": 80,
+      "reason": "Peak forecast European AQI 45 at 2026-11-11T15:00:00+00:00 requires 0 km/h reduction.",
+      "controlling_aqi": 45.0,
+      "controlling_time": "2026-11-11T15:00:00+00:00",
+      "reduction_kmh": 0,
+      "model_reason": "The maximum AQI of 45.0 is within the Band A range of 0 through 60, so the reduction should be 0.",
+      "ollama_status": "cached_validated",
+      "model": "qwen2.5:1.5b",
+      "policy_version": "classroom-eaqi-v1",
+      "prompt_version": "air_v6",
+      "request_hash": "14243abc841446cbd4f4f2021adcf601bd10985b052498093c8911df4c7c0850",
+      "raw_response": "{\n  \"reason\": \"The maximum AQI of 45.0 is within the Band A range of 0 through 60, so the reduction should be 0.\",\n  \"controlling_aqi\": 45.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reduction_kmh\": 0\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 35.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 40.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 45.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: all clear (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  },
+  {
+    "case": "air_only",
+    "snapshot_time": "2026-11-11T17:06:31.436569+00:00",
+    "sensors": {
+      "light_millilux": 1000,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "complete",
+    "limit": 50,
+    "weather": {
+      "status": "valid",
+      "limit": 80,
+      "triggered": false,
+      "model_called": false,
+      "reason": "Weather router clear",
+      "predicted_count": null,
+      "target_unmet": false
+    },
+    "air": {
+      "status": "valid",
+      "limit": 50,
+      "reason": "Peak forecast European AQI 110 at 2026-11-11T15:00:00+00:00 requires 30 km/h reduction.",
+      "controlling_aqi": 110.0,
+      "controlling_time": "2026-11-11T15:00:00+00:00",
+      "reduction_kmh": 30,
+      "model_reason": "The maximum AQI of 110.0 is in the forecast period, which is the most recent data available. The policy states that if the AQI is above 100, the reduction in speed should be 30 km/h. Therefore, the reduction_kmh is 30.",
+      "ollama_status": "inferred",
+      "model": "qwen2.5:1.5b",
+      "policy_version": "classroom-eaqi-v1",
+      "prompt_version": "air_v6",
+      "request_hash": "b8e636abaa1a3864d32be85ccec0f12cb0d14e92a0e6cabfad6dc7a464d036a7",
+      "raw_response": "{\n  \"reason\": \"The maximum AQI of 110.0 is in the forecast period, which is the most recent data available. The policy states that if the AQI is above 100, the reduction in speed should be 30 km/h. Therefore, the reduction_kmh is 30.\",\n  \"controlling_aqi\": 110.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reduction_kmh\": 30\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 65.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 90.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 110.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: clean now, rising forecast (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  },
+  {
+    "case": "both",
+    "snapshot_time": "2026-11-11T17:06:38.170371+00:00",
+    "sensors": {
+      "light_millilux": 499,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "complete",
+    "limit": 40,
+    "weather": {
+      "status": "valid",
+      "limit": 40,
+      "triggered": true,
+      "model_called": true,
+      "predicted_count": 2.3322816274589853,
+      "target_unmet": true,
+      "candidate_estimates": {
+        "70": 2.431311681985164,
+        "60": 2.2241442045562567,
+        "50": 1.8304324975434128,
+        "40": 2.3322816274589853
+      },
+      "training_hours_at_selected_speed": 0,
+      "reason": "Target unmet; lowest candidate; observational estimate, not a safety guarantee"
+    },
+    "air": {
+      "status": "valid",
+      "limit": 50,
+      "reason": "Peak forecast European AQI 110 at 2026-11-11T15:00:00+00:00 requires 30 km/h reduction.",
+      "controlling_aqi": 110.0,
+      "controlling_time": "2026-11-11T15:00:00+00:00",
+      "reduction_kmh": 30,
+      "model_reason": "The maximum AQI of 110.0 is in the forecast period, which is the most recent data available. The policy states that if the AQI is above 100, the reduction in speed should be 30 km/h. Therefore, the reduction_kmh is 30.",
+      "ollama_status": "cached_validated",
+      "model": "qwen2.5:1.5b",
+      "policy_version": "classroom-eaqi-v1",
+      "prompt_version": "air_v6",
+      "request_hash": "b8e636abaa1a3864d32be85ccec0f12cb0d14e92a0e6cabfad6dc7a464d036a7",
+      "raw_response": "{\n  \"reason\": \"The maximum AQI of 110.0 is in the forecast period, which is the most recent data available. The policy states that if the AQI is above 100, the reduction in speed should be 30 km/h. Therefore, the reduction_kmh is 30.\",\n  \"controlling_aqi\": 110.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reduction_kmh\": 30\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 65.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 90.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 110.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: clean now, rising forecast (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  }
+]

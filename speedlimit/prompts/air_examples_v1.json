@@ -1,0 +1,4 @@
+{
+  "description": "Few-shot AQI examples; response reductions are rendered from the versioned policy, never copied from actual live inputs.",
+  "peaks": [20, 75, 95, 120]
+}

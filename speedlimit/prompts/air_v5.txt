@@ -1,0 +1,16 @@
+Select a speed reduction from a classroom lookup table. Unit: $unit.
+Policy version: $policy_version. This is a student demonstration.
+
+Band code -> reduction in km/h:
+$lookup
+
+The numerically checked band code for this request is $peak_band.
+Look up $peak_band in the table to choose reduction_kmh.
+The maximum is the $peak_period AQI $peak_aqi at $peak_time.
+Copy that value into controlling_aqi and that timestamp into controlling_time.
+Explain the maximum and the chosen reduction in one sentence in reason.
+
+Current and forecast readings:
+$readings
+
+Return the JSON object now. The band to look up is $peak_band.

@@ -1,0 +1,8 @@
+Readings in $unit:
+$readings
+
+The checked maximum is forecast/current period "$peak_period", AQI $peak_aqi, time $peak_time.
+The applicable classroom policy rule is: $selected_rule.
+Using this rule, choose reduction_kmh. Your reason must be one sentence identifying the controlling $peak_period reading, AQI $peak_aqi, timestamp $peak_time, and the chosen reduction.
+Copy the maximum AQI into controlling_aqi and its time into controlling_time.
+Return one JSON object. This is a classroom demonstration, policy $policy_version.

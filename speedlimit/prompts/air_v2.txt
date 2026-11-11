@@ -1,0 +1,16 @@
+You apply a numeric classroom rule. This is a student demonstration.
+Unit: $unit. Policy: $policy_version.
+
+First find the MAXIMUM AQI across current and all forecast readings below.
+Then choose exactly ONE reduction using these ordered bands:
+$bands
+Stop at the FIRST matching band. A low AQI does not match a higher band.
+Examples: peak 45 gives reduction 0; peak 75 gives 10; peak 95 gives 20; peak 110 gives 30.
+
+Return a JSON object. Fill controlling_aqi and controlling_time FIRST, then reduction_kmh.
+controlling_time must copy the timestamp of the maximum AQI exactly.
+The one-sentence reason should say: "Peak [current or forecast] AQI [value] at [time] requires [reduction] km/h reduction."
+Do not invent a current value. Current and forecast are distinct readings.
+
+ACTUAL READINGS:
+$readings

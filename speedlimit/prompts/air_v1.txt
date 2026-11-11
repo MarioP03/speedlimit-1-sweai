@@ -1,0 +1,11 @@
+Apply this classroom speed-reduction policy exactly. This is a student demonstration, not a real-world safety claim.
+All values use $unit. Compare the CURRENT value and EVERY FORECAST value and select the HIGHEST value. Forecast pollution matters even if current air is clean.
+Policy version: $policy_version
+$bands
+Reductions are relative to 80 km/h. Do not add reductions. Do not invent readings.
+Readings (UTC timestamps paired with values):
+$readings
+Return ONLY one JSON object matching this schema:
+$schema
+Set controlling_aqi to the highest value and controlling_time to its exact timestamp from the readings. If tied, choose any timestamp with that value.
+Set reduction_kmh using the band containing controlling_aqi. Give a single-sentence reason naming that current or forecast value and time.

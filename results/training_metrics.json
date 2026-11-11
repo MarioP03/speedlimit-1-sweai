@@ -1,0 +1,81 @@
+{
+  "train": {
+    "all": {
+      "n": 283,
+      "mae": 0.9016745785429713,
+      "baseline_mae": 0.9925457928055038,
+      "mean_observed": 1.3710247349823321,
+      "mean_predicted": 1.372096080088336
+    },
+    "weather_triggered": {
+      "n": 104,
+      "mae": 0.876903211732428,
+      "baseline_mae": 0.9773715683609676,
+      "mean_observed": 1.2692307692307692,
+      "mean_predicted": 1.2793540777458798
+    },
+    "speed_counts": {
+      "50": 7,
+      "60": 84,
+      "70": 15,
+      "80": 177
+    }
+  },
+  "validation": {
+    "all": {
+      "n": 61,
+      "mae": 1.1900055520008184,
+      "baseline_mae": 1.1039216822105082,
+      "mean_observed": 1.4262295081967213,
+      "mean_predicted": 1.439746910073484
+    },
+    "weather_triggered": {
+      "n": 17,
+      "mae": 1.270867893398525,
+      "baseline_mae": 1.2722926626480981,
+      "mean_observed": 1.8235294117647058,
+      "mean_predicted": 1.2298374806182306
+    },
+    "speed_counts": {
+      "50": 2,
+      "60": 11,
+      "70": 4,
+      "80": 44
+    }
+  },
+  "test": {
+    "all": {
+      "n": 61,
+      "mae": 0.8597042053936262,
+      "baseline_mae": 0.9103863754851418,
+      "mean_observed": 1.180327868852459,
+      "mean_predicted": 1.4315390879409824
+    },
+    "weather_triggered": {
+      "n": 22,
+      "mae": 0.7919246843556382,
+      "baseline_mae": 0.9633793768069385,
+      "mean_observed": 1.0,
+      "mean_predicted": 1.3020758791250557
+    },
+    "speed_counts": {
+      "60": 22,
+      "70": 2,
+      "80": 37
+    }
+  },
+  "fit_warnings": [
+    {
+      "category": "OptimizeWarning",
+      "message": "Unknown solver options: iprint"
+    }
+  ],
+  "design": {
+    "hidden_units": 16,
+    "solver": "lbfgs",
+    "alpha": 1.0,
+    "seed": 42,
+    "split": "chronological 70/15/15; no model selection on test or NPlus1",
+    "negative_predictions": "clamped to zero"
+  }
+}

@@ -1,0 +1,240 @@
+[
+  {
+    "case": "baseline",
+    "snapshot_time": "2026-11-11T16:44:38.281837+00:00",
+    "sensors": {
+      "light_millilux": 1000,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "incomplete",
+    "limit": null,
+    "weather": {
+      "status": "valid",
+      "limit": 80,
+      "triggered": false,
+      "model_called": false,
+      "reason": "Weather router clear",
+      "predicted_count": null,
+      "target_unmet": false
+    },
+    "air": {
+      "status": "unavailable",
+      "limit": null,
+      "reason": "Local Ollama decision unavailable: Local model response is inconsistent with classroom policy",
+      "ollama_status": "unavailable",
+      "model": "qwen2.5:1.5b",
+      "raw_response": "{\n  \"reduction_kmh\": 20,\n  \"controlling_aqi\": 45.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reason\": \"The maximum AQI of 45.0 is forecasted for the time of 2026-11-11T15:00:00+00:00, which is the time corresponding to the numerically checked band code A. Therefore, the reduction in speed is 20 km/h.\"\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 35.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 40.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 45.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: all clear (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  },
+  {
+    "case": "weather_only",
+    "snapshot_time": "2026-11-11T16:44:45.471343+00:00",
+    "sensors": {
+      "light_millilux": 499,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "incomplete",
+    "limit": null,
+    "weather": {
+      "status": "valid",
+      "limit": 40,
+      "triggered": true,
+      "model_called": true,
+      "predicted_count": 2.3322816274589853,
+      "target_unmet": true,
+      "candidate_estimates": {
+        "70": 2.431311681985164,
+        "60": 2.2241442045562567,
+        "50": 1.8304324975434128,
+        "40": 2.3322816274589853
+      },
+      "training_hours_at_selected_speed": 0,
+      "reason": "Target unmet; lowest candidate; observational estimate, not a safety guarantee"
+    },
+    "air": {
+      "status": "unavailable",
+      "limit": null,
+      "reason": "Local Ollama decision unavailable: Local model response is inconsistent with classroom policy",
+      "ollama_status": "unavailable",
+      "model": "qwen2.5:1.5b",
+      "raw_response": "{\n  \"reduction_kmh\": 20,\n  \"controlling_aqi\": 45.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reason\": \"The maximum AQI of 45.0 is forecasted for the time of the request, which is 2026-11-11T15:00:00+00:00. Since the numerically checked band code for A is 0, the reduction in speed is 20 km/h.\"\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 35.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 40.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 45.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: all clear (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  },
+  {
+    "case": "air_only",
+    "snapshot_time": "2026-11-11T16:44:50.106294+00:00",
+    "sensors": {
+      "light_millilux": 1000,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "complete",
+    "limit": 50,
+    "weather": {
+      "status": "valid",
+      "limit": 80,
+      "triggered": false,
+      "model_called": false,
+      "reason": "Weather router clear",
+      "predicted_count": null,
+      "target_unmet": false
+    },
+    "air": {
+      "status": "valid",
+      "limit": 50,
+      "reduction_kmh": 30,
+      "controlling_aqi": 110.0,
+      "controlling_time": "2026-11-11T15:00:00+00:00",
+      "reason": "The maximum AQI of 110.0 is forecasted for the time of the request, which is 2026-11-11T15:00:00+00:00. The reduction in speed is 30 km/h, corresponding to the band D in the lookup table.",
+      "ollama_status": "inferred",
+      "model": "qwen2.5:1.5b",
+      "policy_version": "classroom-eaqi-v1",
+      "prompt_version": "air_v5",
+      "request_hash": "a766793c18fd1cc454f422f83ddaee780308b0b32ce6460ef57c85d1664af5a0",
+      "raw_response": "{\n  \"reduction_kmh\": 30,\n  \"controlling_aqi\": 110.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reason\": \"The maximum AQI of 110.0 is forecasted for the time of the request, which is 2026-11-11T15:00:00+00:00. The reduction in speed is 30 km/h, corresponding to the band D in the lookup table.\"\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 65.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 90.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 110.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: clean now, rising forecast (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  },
+  {
+    "case": "both",
+    "snapshot_time": "2026-11-11T16:44:56.827640+00:00",
+    "sensors": {
+      "light_millilux": 499,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "complete",
+    "limit": 40,
+    "weather": {
+      "status": "valid",
+      "limit": 40,
+      "triggered": true,
+      "model_called": true,
+      "predicted_count": 2.3322816274589853,
+      "target_unmet": true,
+      "candidate_estimates": {
+        "70": 2.431311681985164,
+        "60": 2.2241442045562567,
+        "50": 1.8304324975434128,
+        "40": 2.3322816274589853
+      },
+      "training_hours_at_selected_speed": 0,
+      "reason": "Target unmet; lowest candidate; observational estimate, not a safety guarantee"
+    },
+    "air": {
+      "status": "valid",
+      "limit": 50,
+      "reduction_kmh": 30,
+      "controlling_aqi": 110.0,
+      "controlling_time": "2026-11-11T15:00:00+00:00",
+      "reason": "The maximum AQI of 110.0 is forecasted for the time of the request, which is 2026-11-11T15:00:00+00:00. The reduction in speed is 30 km/h, corresponding to the band D in the lookup table.",
+      "ollama_status": "cached_validated",
+      "model": "qwen2.5:1.5b",
+      "policy_version": "classroom-eaqi-v1",
+      "prompt_version": "air_v5",
+      "request_hash": "a766793c18fd1cc454f422f83ddaee780308b0b32ce6460ef57c85d1664af5a0",
+      "raw_response": "{\n  \"reduction_kmh\": 30,\n  \"controlling_aqi\": 110.0,\n  \"controlling_time\": \"2026-11-11T15:00:00+00:00\",\n  \"reason\": \"The maximum AQI of 110.0 is forecasted for the time of the request, which is 2026-11-11T15:00:00+00:00. The reduction in speed is 30 km/h, corresponding to the band D in the lookup table.\"\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T12:00:00+00:00",
+          "aqi": 30.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T13:00:00+00:00",
+            "aqi": 65.0
+          },
+          {
+            "time": "2026-11-11T14:00:00+00:00",
+            "aqi": 90.0
+          },
+          {
+            "time": "2026-11-11T15:00:00+00:00",
+            "aqi": 110.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T12:15:00+00:00",
+        "source": "Saved classroom readings: clean now, rising forecast (synthetic AQI fixture)",
+        "api_cache_hit": false,
+        "location": "Classroom fixture; saved clock"
+      }
+    }
+  }
+]

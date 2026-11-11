@@ -1,0 +1,12 @@
+{
+  "version": "classroom-eaqi-v1",
+  "unit": "European AQI (dimensionless)",
+  "aggregation": "maximum of current and all selected forecast values",
+  "bands": [
+    {"upper_inclusive": 60, "reduction_kmh": 0},
+    {"upper_inclusive": 80, "reduction_kmh": 10},
+    {"upper_inclusive": 100, "reduction_kmh": 20},
+    {"upper_inclusive": null, "reduction_kmh": 30}
+  ],
+  "basis": "Student classroom assumption; no validated traffic-speed policy"
+}

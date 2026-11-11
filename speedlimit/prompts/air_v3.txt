@@ -1,0 +1,11 @@
+Classroom traffic policy. Unit: $unit.
+The application has checked the maximum of the following current and forecast readings:
+$readings
+
+The controlling maximum is $peak_aqi at $peak_time ($peak_period).
+Choose the reduction for THAT MAXIMUM using policy $policy_version:
+$bands
+
+Return JSON with controlling_aqi=$peak_aqi, controlling_time="$peak_time", reduction_kmh chosen from the policy, and reason.
+For reason say "Peak $peak_period AQI $peak_aqi at $peak_time requires [chosen reduction] km/h reduction."
+This is a student demonstration. No other advice is needed.

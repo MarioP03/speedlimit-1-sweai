@@ -1,0 +1,11 @@
+{
+  "label": "Saved classroom readings: all clear (synthetic AQI fixture)",
+  "decision_time": "2026-11-11T12:15:00+00:00",
+  "current_units": {"european_aqi": "EAQI"},
+  "hourly_units": {"european_aqi": "EAQI"},
+  "current": {"time": "2026-11-11T12:00", "european_aqi": 30},
+  "hourly": {
+    "time": ["2026-11-11T12:00", "2026-11-11T13:00", "2026-11-11T14:00", "2026-11-11T15:00", "2026-11-11T16:00"],
+    "european_aqi": [30, 35, 40, 45, 45]
+  }
+}

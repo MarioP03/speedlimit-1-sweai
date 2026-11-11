@@ -1,0 +1,513 @@
+{
+  "verdict": "insufficient evidence",
+  "rationale": "Sensor inputs repeat Year N exactly; no independent evidence for retention",
+  "evaluation": {
+    "all": {
+      "n": 404,
+      "mae": 0.9067179666769754,
+      "baseline_mae": 0.8876779904138824,
+      "mean_observed": 1.0891089108910892,
+      "mean_predicted": 1.3913836296559299
+    },
+    "weather_triggered": {
+      "n": 142,
+      "mae": 0.9315369368920229,
+      "baseline_mae": 0.9489125566117553,
+      "mean_observed": 1.0070422535211268,
+      "mean_predicted": 1.276570988971456
+    },
+    "speed_counts": {
+      "50": 9,
+      "60": 116,
+      "70": 21,
+      "80": 258
+    }
+  },
+  "year_N_test_reference": {
+    "n": 61,
+    "mae": 0.8597042053936262,
+    "baseline_mae": 0.9103863754851418,
+    "mean_observed": 1.180327868852459,
+    "mean_predicted": 1.4315390879409824
+  },
+  "mae_deterioration_threshold": 1.0746302567420327,
+  "year_N_coverage": {
+    "year_label": "N",
+    "calendar_label_only": 2024,
+    "actions": {
+      "input_readings": {
+        "count": 12648,
+        "examples": []
+      },
+      "header_present": {
+        "count": 1,
+        "examples": []
+      },
+      "first_record_preserved": {
+        "count": 1,
+        "examples": [
+          [
+            "1",
+            "1",
+            "0",
+            "3",
+            "35",
+            "6",
+            "0,00"
+          ]
+        ]
+      },
+      "duplicated_type_codes_resolved_without_join": {
+        "count": 1,
+        "examples": [
+          "T"
+        ]
+      },
+      "provisional_temperature_ids": {
+        "count": 2,
+        "examples": [
+          15,
+          18
+        ]
+      },
+      "exact_reading_duplicates_removed": {
+        "count": 0,
+        "examples": []
+      },
+      "invalid_reading_dates_excluded_no_supported_repair": {
+        "count": 0,
+        "examples": []
+      },
+      "missing_or_invalid_reading_id_value": {
+        "count": 0,
+        "examples": []
+      },
+      "unknown_inventory_readings_excluded": {
+        "count": 744,
+        "examples": [
+          19
+        ]
+      },
+      "inventory_ids_without_readings": {
+        "count": 3,
+        "examples": [
+          7,
+          10,
+          17
+        ]
+      },
+      "ambiguous_T_readings_excluded_from_features": {
+        "count": 744,
+        "examples": [
+          7,
+          16
+        ]
+      },
+      "outside_semantic_range_excluded": {
+        "count": 0,
+        "examples": []
+      },
+      "unused_reading_channels": {
+        "count": 5952,
+        "examples": []
+      },
+      "same_sensor_timestamp_collisions_median": {
+        "count": 0,
+        "examples": []
+      },
+      "feature_readings_after_cleaning": {
+        "count": 6696,
+        "examples": []
+      },
+      "input_events": {
+        "count": 997,
+        "examples": []
+      },
+      "anonymous_event_collisions_retained": {
+        "count": 0,
+        "examples": []
+      },
+      "invalid_event_dates_not_repaired": {
+        "count": 44,
+        "examples": [
+          {
+            "row": 72,
+            "Month": "1",
+            "Day": "12",
+            "Hour": "24",
+            "Second": "29"
+          },
+          {
+            "row": 102,
+            "Month": "1",
+            "Day": "2",
+            "Hour": "24",
+            "Second": "59"
+          },
+          {
+            "row": 118,
+            "Month": "1",
+            "Day": "18",
+            "Hour": "24",
+            "Second": "24"
+          },
+          {
+            "row": 121,
+            "Month": "1",
+            "Day": "27",
+            "Hour": "24",
+            "Second": "22"
+          },
+          {
+            "row": 130,
+            "Month": "1",
+            "Day": "2",
+            "Hour": "24",
+            "Second": "57"
+          }
+        ]
+      },
+      "event_rows_without_known_kind": {
+        "count": 1,
+        "examples": [
+          459
+        ]
+      },
+      "accident_only_rows_not_near_events": {
+        "count": 32,
+        "examples": []
+      },
+      "qualifying_near_events": {
+        "count": 920,
+        "examples": []
+      },
+      "unknown_event_hours": {
+        "count": 31,
+        "examples": [
+          "2024-01-01 00:00:00",
+          "2024-01-02 00:00:00",
+          "2024-01-03 00:00:00",
+          "2024-01-04 00:00:00",
+          "2024-01-05 00:00:00"
+        ]
+      },
+      "covered_grid_hours": {
+        "count": 744,
+        "examples": []
+      },
+      "hours_missing_boundary_features": {
+        "count": 1,
+        "examples": []
+      },
+      "hours_unknown_event_coverage": {
+        "count": 30,
+        "examples": []
+      },
+      "hours_speed_changes_excluded": {
+        "count": 329,
+        "examples": []
+      },
+      "usable_target_hours": {
+        "count": 405,
+        "examples": []
+      },
+      "usable_zero_event_hours": {
+        "count": 114,
+        "examples": []
+      }
+    },
+    "maximum_used_carry_age_hours": 0.9991666666666666,
+    "feature_missing_fraction": {
+      "light_millilux": 0.0013440860215053765,
+      "water_um": 0.0013440860215053765,
+      "temperature_c": 0.0013440860215053765,
+      "speed_kmh": 0.0013440860215053765
+    },
+    "usable_feature_means": {
+      "light_millilux": 40355630.641975306,
+      "water_um": 185.09906172839504,
+      "temperature_c": -3.469975308641975,
+      "speed_kmh": 73.03703703703704
+    },
+    "raw_speed_counts": {
+      "40.0": 7,
+      "50.0": 55,
+      "60.0": 258,
+      "70.0": 97,
+      "80.0": 327
+    },
+    "usable_speed_counts": {
+      "50.0": 9,
+      "60.0": 117,
+      "70.0": 21,
+      "80.0": 258
+    },
+    "event_coverage_assumption": true,
+    "source_sha256": {
+      "sensors": "ec09852598ca715d4c151ddeaa2730bd67378bc960636fb34a31e3757dce3658",
+      "types": "f7f1d1be0f10cbedf55e64e741c97ac4f816b790a83908bd70c88c1d0a170761",
+      "N_readings": "a469af94fae8925640e25efdd7a023d0177aba8b9e810538528c5c2fe1217106",
+      "N_events": "53775885a15c803c639d966ddb77462dc05abb1286949054014cacb032e7cc34"
+    }
+  },
+  "year_NPlus1_coverage": {
+    "year_label": "NPlus1",
+    "calendar_label_only": 2025,
+    "actions": {
+      "input_readings": {
+        "count": 12648,
+        "examples": []
+      },
+      "header_present": {
+        "count": 0,
+        "examples": []
+      },
+      "first_record_preserved": {
+        "count": 1,
+        "examples": [
+          [
+            "1",
+            "1",
+            "0",
+            "3",
+            "35",
+            "6",
+            "0,00"
+          ]
+        ]
+      },
+      "duplicated_type_codes_resolved_without_join": {
+        "count": 1,
+        "examples": [
+          "T"
+        ]
+      },
+      "provisional_temperature_ids": {
+        "count": 2,
+        "examples": [
+          15,
+          18
+        ]
+      },
+      "exact_reading_duplicates_removed": {
+        "count": 0,
+        "examples": []
+      },
+      "invalid_reading_dates_excluded_no_supported_repair": {
+        "count": 0,
+        "examples": []
+      },
+      "missing_or_invalid_reading_id_value": {
+        "count": 0,
+        "examples": []
+      },
+      "unknown_inventory_readings_excluded": {
+        "count": 744,
+        "examples": [
+          19
+        ]
+      },
+      "inventory_ids_without_readings": {
+        "count": 3,
+        "examples": [
+          7,
+          10,
+          17
+        ]
+      },
+      "ambiguous_T_readings_excluded_from_features": {
+        "count": 744,
+        "examples": [
+          7,
+          16
+        ]
+      },
+      "outside_semantic_range_excluded": {
+        "count": 0,
+        "examples": []
+      },
+      "unused_reading_channels": {
+        "count": 5952,
+        "examples": []
+      },
+      "same_sensor_timestamp_collisions_median": {
+        "count": 0,
+        "examples": []
+      },
+      "feature_readings_after_cleaning": {
+        "count": 6696,
+        "examples": []
+      },
+      "input_events": {
+        "count": 844,
+        "examples": []
+      },
+      "anonymous_event_collisions_retained": {
+        "count": 1,
+        "examples": []
+      },
+      "invalid_event_dates_not_repaired": {
+        "count": 31,
+        "examples": [
+          {
+            "row": 43,
+            "Month": "1",
+            "Day": "1",
+            "Hour": "24",
+            "Second": "2"
+          },
+          {
+            "row": 54,
+            "Month": "1",
+            "Day": "12",
+            "Hour": "24",
+            "Second": "25"
+          },
+          {
+            "row": 61,
+            "Month": "1",
+            "Day": "8",
+            "Hour": "24",
+            "Second": "0"
+          },
+          {
+            "row": 103,
+            "Month": "1",
+            "Day": "21",
+            "Hour": "24",
+            "Second": "26"
+          },
+          {
+            "row": 157,
+            "Month": "1",
+            "Day": "11",
+            "Hour": "24",
+            "Second": "11"
+          }
+        ]
+      },
+      "event_rows_without_known_kind": {
+        "count": 1,
+        "examples": [
+          85
+        ]
+      },
+      "accident_only_rows_not_near_events": {
+        "count": 19,
+        "examples": []
+      },
+      "qualifying_near_events": {
+        "count": 793,
+        "examples": []
+      },
+      "unknown_event_hours": {
+        "count": 28,
+        "examples": [
+          "2025-01-01 00:00:00",
+          "2025-01-02 00:00:00",
+          "2025-01-03 00:00:00",
+          "2025-01-04 00:00:00",
+          "2025-01-05 00:00:00"
+        ]
+      },
+      "covered_grid_hours": {
+        "count": 744,
+        "examples": []
+      },
+      "hours_missing_boundary_features": {
+        "count": 1,
+        "examples": []
+      },
+      "hours_unknown_event_coverage": {
+        "count": 27,
+        "examples": []
+      },
+      "hours_speed_changes_excluded": {
+        "count": 329,
+        "examples": []
+      },
+      "usable_target_hours": {
+        "count": 404,
+        "examples": []
+      },
+      "usable_zero_event_hours": {
+        "count": 132,
+        "examples": []
+      }
+    },
+    "maximum_used_carry_age_hours": 0.9991666666666666,
+    "feature_missing_fraction": {
+      "light_millilux": 0.0013440860215053765,
+      "water_um": 0.0013440860215053765,
+      "temperature_c": 0.0013440860215053765,
+      "speed_kmh": 0.0013440860215053765
+    },
+    "usable_feature_means": {
+      "light_millilux": 40455520.1980198,
+      "water_um": 185.55722772277227,
+      "temperature_c": -3.445210396039604,
+      "speed_kmh": 73.06930693069307
+    },
+    "raw_speed_counts": {
+      "40.0": 7,
+      "50.0": 55,
+      "60.0": 258,
+      "70.0": 97,
+      "80.0": 327
+    },
+    "usable_speed_counts": {
+      "50.0": 9,
+      "60.0": 116,
+      "70.0": 21,
+      "80.0": 258
+    },
+    "event_coverage_assumption": true,
+    "source_sha256": {
+      "sensors": "ec09852598ca715d4c151ddeaa2730bd67378bc960636fb34a31e3757dce3658",
+      "types": "f7f1d1be0f10cbedf55e64e741c97ac4f816b790a83908bd70c88c1d0a170761",
+      "NPlus1_readings": "3036564613c0e840f137725569b1faabef39f1529269e2b043bf2e6ec6e6a67b",
+      "NPlus1_events": "4eb598376f56b53e68054d6c8ee6bb4a4211c82d30b5697523b00a3124616935"
+    }
+  },
+  "feature_means_NPlus1": {
+    "light_millilux": 40455520.1980198,
+    "water_um": 185.55722772277227,
+    "temperature_c": -3.445210396039604,
+    "speed_kmh": 73.06930693069307
+  },
+  "feature_means_N": {
+    "light_millilux": 40355630.641975306,
+    "water_um": 185.09906172839504,
+    "temperature_c": -3.469975308641975,
+    "speed_kmh": 73.03703703703704
+  },
+  "coverage_comparison": {
+    "N": {
+      "covered_hours": 744,
+      "usable_hours": 405,
+      "missing_fraction": {
+        "light_millilux": 0.0013440860215053765,
+        "water_um": 0.0013440860215053765,
+        "temperature_c": 0.0013440860215053765,
+        "speed_kmh": 0.0013440860215053765
+      }
+    },
+    "NPlus1": {
+      "covered_hours": 744,
+      "usable_hours": 404,
+      "missing_fraction": {
+        "light_millilux": 0.0013440860215053765,
+        "water_um": 0.0013440860215053765,
+        "temperature_c": 0.0013440860215053765,
+        "speed_kmh": 0.0013440860215053765
+      }
+    }
+  },
+  "cautions": [
+    "Small reduced-speed support; counterfactual candidates are weakly supported",
+    "Calendar years are synthetic labels",
+    "Hour-24 encoding remains unresolved",
+    "Retraining cannot fix missing causal evidence or ambiguous event encoding"
+  ],
+  "frozen_model_preserved": true
+}

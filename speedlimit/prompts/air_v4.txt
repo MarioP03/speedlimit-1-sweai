@@ -1,0 +1,19 @@
+Apply this classroom policy by looking up the checked band code. This is a student demonstration.
+Unit: $unit. Policy version: $policy_version.
+
+POLICY LOOKUP TABLE:
+$bands
+
+ACTUAL READINGS:
+$readings
+
+The application has numerically checked the maximum and its band:
+Maximum AQI = $peak_aqi
+Maximum time = $peak_time
+Maximum period = $peak_period
+CHECKED BAND CODE = $peak_band
+
+Use ONLY the row with code $peak_band to choose reduction_kmh.
+Copy controlling_aqi=$peak_aqi and controlling_time="$peak_time" exactly.
+Write reason as "Peak $peak_period AQI $peak_aqi at $peak_time is band $peak_band, requiring [chosen reduction] km/h reduction."
+Return only the JSON object, with all four required fields.

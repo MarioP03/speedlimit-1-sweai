@@ -1,0 +1,64 @@
+[
+  {
+    "case": "live",
+    "snapshot_time": "2026-11-11T17:07:28.551970+00:00",
+    "sensors": {
+      "light_millilux": 1000,
+      "water_um": 0,
+      "temperature_c": 10
+    },
+    "status": "complete",
+    "limit": 80,
+    "weather": {
+      "status": "valid",
+      "limit": 80,
+      "triggered": false,
+      "model_called": false,
+      "reason": "Weather router clear",
+      "predicted_count": null,
+      "target_unmet": false
+    },
+    "air": {
+      "status": "valid",
+      "limit": 80,
+      "reason": "Peak forecast European AQI 46 at 2026-11-11T18:00:00+00:00 requires 0 km/h reduction.",
+      "controlling_aqi": 46.0,
+      "controlling_time": "2026-11-11T18:00:00+00:00",
+      "reduction_kmh": 0,
+      "model_reason": "The maximum AQI of 46.0 is within the Band A range (0 through 60). According to the classroom policy, Band A requires no reduction in speed.",
+      "ollama_status": "inferred",
+      "model": "qwen2.5:1.5b",
+      "policy_version": "classroom-eaqi-v1",
+      "prompt_version": "air_v6",
+      "request_hash": "6b73b3badc3eb707423334d891d75737b6f9e2fee333b226628255b7112a96dd",
+      "raw_response": "{\n  \"reason\": \"The maximum AQI of 46.0 is within the Band A range (0 through 60). According to the classroom policy, Band A requires no reduction in speed.\",\n  \"controlling_aqi\": 46.0,\n  \"controlling_time\": \"2026-11-11T18:00:00+00:00\",\n  \"reduction_kmh\": 0\n}",
+      "readings": {
+        "unit": "European AQI (dimensionless)",
+        "current": {
+          "time": "2026-11-11T17:00:00+00:00",
+          "aqi": 44.0
+        },
+        "forecast": [
+          {
+            "time": "2026-11-11T18:00:00+00:00",
+            "aqi": 46.0
+          },
+          {
+            "time": "2026-11-11T19:00:00+00:00",
+            "aqi": 46.0
+          },
+          {
+            "time": "2026-11-11T20:00:00+00:00",
+            "aqi": 46.0
+          }
+        ],
+        "effective_decision_time": "2026-11-11T17:07:28.551970+00:00",
+        "source": "live Open-Meteo / CAMS ENSEMBLE",
+        "api_cache_hit": false,
+        "location": "Vienna (demo location)",
+        "latitude": 48.21,
+        "longitude": 16.37
+      }
+    }
+  }
+]
