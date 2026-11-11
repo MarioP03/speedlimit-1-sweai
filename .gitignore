@@ -221,3 +221,6 @@ __marimo__/
 
 # Excel sources
 *.csv
+
+# Ignore ppt
+/SpeedLimit-Management-Briefing.pptx
